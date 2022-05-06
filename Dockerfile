@@ -45,4 +45,4 @@ USER ccm
 
 EXPOSE 32175
 CMD []
-ENTRYPOINT [ "bash" "/entrypoint.sh" ]
+ENTRYPOINT [ "bash", "/entrypoint.sh" ]
