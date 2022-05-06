@@ -30,18 +30,16 @@ RUN curl -L -o /tmp/ccm.zip "${CCM_DOWNLOAD_URL}" && \
     mv /tmp/ccm/ccm /usr/bin/ccm && \
     chmod +x /usr/bin/ccm
 
-RUN groupadd ccm
-
-RUN useradd -rm -d /home/scripts -s /bin/bash -g root -G ccm -u 1001 ccm
-
-RUN mkdir /var/log/ccm && chown -R ccm:ccm /var/log/ccm
+RUN groupadd ccm && \
+    useradd -rm -d /home/scripts -s /bin/bash -g root -G ccm -u 1001 ccm && \
+    mkdir /var/log/ccm && chown -R ccm:ccm /var/log/ccm
 
 COPY root/ /
 
-RUN chown -R ccm:ccm /etc/ccm.d
-RUN chown -R ccm:ccm /home/scripts
-RUN chown ccm:ccm /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+RUN chown -R ccm:ccm /etc/ccm.d && \
+    chown -R ccm:ccm /home/scripts && \
+    chown ccm:ccm /entrypoint.sh && \
+    chmod +x /entrypoint.sh
 
 USER ccm
 
