@@ -41,6 +41,7 @@ COPY root/ /
 RUN chown -R ccm:ccm /etc/ccm.d
 RUN chown -R ccm:ccm /home/scripts
 RUN chown ccm:ccm /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 USER ccm
 
