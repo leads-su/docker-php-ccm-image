@@ -1,0 +1,23 @@
+agent:
+  network:
+    interface: ""
+    address: "127.0.0.1"
+    port: 32175
+  health_check:
+    ttl: true
+    http: true
+consul:
+  enabled: true
+  datacenter: "dc1"
+  addresses:
+    - scheme: "http"
+      host: "127.0.0.1"
+      port: 8500
+  token: "f23fd6e8-8d11-441a-96a2-9f3169dab843"
+  write_to: "/etc/ccm.d"
+environment: "testing"
+log:
+  level: DEBUG
+  write_to: "/var/log/ccm"
+sse:
+  write_to: "/var/log/ccm/events"
