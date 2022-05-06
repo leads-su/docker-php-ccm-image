@@ -11,7 +11,7 @@ consul:
   datacenter: "dc1"
   addresses:
     - scheme: "http"
-      host: "127.0.0.1"
+      host: "consul"
       port: 8500
   token: "f23fd6e8-8d11-441a-96a2-9f3169dab843"
   write_to: "/etc/ccm.d"
