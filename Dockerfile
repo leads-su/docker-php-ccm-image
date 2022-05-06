@@ -40,6 +40,10 @@ COPY root/ /
 
 RUN chown -R ccm:ccm /etc/ccm.d
 RUN chown -R ccm:ccm /home/scripts
+RUN chown ccm:ccm /entrypoint.sh
+
+USER ccm
 
 EXPOSE 32175
-CMD ["ccm", "start"]
+CMD []
+ENTRYPOINT [ "/entrypoint.sh" ]
